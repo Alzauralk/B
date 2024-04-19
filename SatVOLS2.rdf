@@ -1,0 +1,1013 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/"
+     xml:base="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:Ontologia_de_satisfacció_de_vols="urn:absolute:Ontologia_de_satisfacció_de_vols#">
+    <owl:Ontology rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#sameAs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#belongs_to -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#belongs_to">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Aircraft"/>
+        <rdfs:range rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Airline"/>
+        <rdfs:comment>Property that indicates what company owns the aircraft</rdfs:comment>
+        <rdfs:label>belongs_to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#has_ID -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#has_ID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:range rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID"/>
+        <rdfs:comment>Property to indicate what ID has the review</rdfs:comment>
+        <rdfs:label>has_id</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#written_by -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#written_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:range rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+        <rdfs:comment>Property to indicate who has written the review</rdfs:comment>
+        <rdfs:label>written_by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+    </rdf:Description>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#hasRating -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#hasRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">max_rating</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>data to indicate what rating the review has</rdfs:comment>
+        <rdfs:label>hasRating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#isRecommended -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#isRecommended">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>data to indicate if the review is recommended</rdfs:comment>
+        <rdfs:label>isRecommended</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#isVerified -->
+
+    <owl:DatatypeProperty rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#isVerified">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>data to indicate if the review is verified</rdfs:comment>
+        <rdfs:label>isVerified</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Aircraft -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Aircraft">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#belongs_to"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Airline"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Class representing the Aircraft for which the review is done</rdfs:comment>
+        <rdfs:label>Aircraft</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Airline -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Airline">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Aircraft"/>
+        <rdfs:comment>Class representing the owner of the aicraft</rdfs:comment>
+        <rdfs:label>Airline</rdfs:label>
+        <rdfs:sameAs>https://dbpedia.org/ontology/Airline</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Author -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Author">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the author of the review</rdfs:comment>
+        <rdfs:label>Author</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Business -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Business">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Type_of_traveler"/>
+        <rdfs:comment>Class representing type of traveler of business</rdfs:comment>
+        <rdfs:label>Business</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Business_class -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Business_class">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_type"/>
+        <rdfs:comment>Class representing seat type of business class</rdfs:comment>
+        <rdfs:label>Business_class</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Cabin_staff_service -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Cabin_staff_service">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+        <rdfs:comment>Class representing the rating of cabin staff service</rdfs:comment>
+        <rdfs:label>Cabin_staff_service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Couple_leisure -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Couple_leisure">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Type_of_traveler"/>
+        <rdfs:comment>Class representing type of traveler of couple leisure</rdfs:comment>
+        <rdfs:label>Couple_leisure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Date_flown -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Date_flown">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the date flight took place</rdfs:comment>
+        <rdfs:label>Date_flown</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Date_published -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Date_published">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the date the author published the review</rdfs:comment>
+        <rdfs:label>Date_published</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Destination -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Destination">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the destination of the flight</rdfs:comment>
+        <rdfs:label>Destination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Economy_class -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Economy_class">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_type"/>
+        <rdfs:comment>Class representing seat type of economy class</rdfs:comment>
+        <rdfs:label>Economy_class</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Family_leisure -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Family_leisure">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Type_of_traveler"/>
+        <rdfs:comment>Class representing type of traveler of family leisure</rdfs:comment>
+        <rdfs:label>Family_leisure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#First_class -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#First_class">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_type"/>
+        <rdfs:comment>Class representing seat type of first class</rdfs:comment>
+        <rdfs:label>First_class</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Food_and_beverages -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Food_and_beverages">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+        <rdfs:comment>Class representing the rating of food and beverages</rdfs:comment>
+        <rdfs:label>Food_and_beverages</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Ground_service -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Ground_service">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+        <rdfs:comment>Class representing the rating of ground service</rdfs:comment>
+        <rdfs:label>Ground_service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Inflight_entertainment -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Inflight_entertainment">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+        <rdfs:comment>Class representing the rating of inflight entertainment</rdfs:comment>
+        <rdfs:label>Inflight_entertainment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+        <rdfs:comment>Class representing the max rating</rdfs:comment>
+        <rdfs:label>Max_rating</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_css -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_css">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Cabin_staff_service"/>
+        <rdfs:comment>Class representing the max rating of cabin staff service</rdfs:comment>
+        <rdfs:label>Max_rating_css</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_fab -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_fab">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Food_and_beverages"/>
+        <rdfs:comment>Class representing the max rating of food and beverages</rdfs:comment>
+        <rdfs:label>Max_rating_fab</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_gs -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_gs">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Ground_service"/>
+        <rdfs:comment>Class representing the max rating of ground service</rdfs:comment>
+        <rdfs:label>Max_rating_gs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_ie -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_ie">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Inflight_entertainment"/>
+        <rdfs:comment>Class representing the max rating of inflight entertainment</rdfs:comment>
+        <rdfs:label>Max_rating_ie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_sc -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_sc">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_comfort"/>
+        <rdfs:comment>Class representing the max rating of seat comfort</rdfs:comment>
+        <rdfs:label>Max_rating_sc</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_vfm -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_vfm">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Value_for_money"/>
+        <rdfs:comment>Class representing the max rating of value for money</rdfs:comment>
+        <rdfs:label>Max_rating_vfm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_wac -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_wac">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Wifi_and_connectivity"/>
+        <rdfs:comment>Class representing the max rating of wifi and connectivity</rdfs:comment>
+        <rdfs:label>Max_rating_wac</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Origin -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Origin">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the origin of the flight</rdfs:comment>
+        <rdfs:label>Origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Passenger_country -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Passenger_country">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+        <rdfs:comment>Class representing the country of the Author</rdfs:comment>
+        <rdfs:label>Passenger_country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Premium_economy -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Premium_economy">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_type"/>
+        <rdfs:comment>Class representing seat type of premium economy</rdfs:comment>
+        <rdfs:label>Premium_economy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Airline"/>
+        <owl:disjointWith rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Rating -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the rating of the review</rdfs:comment>
+        <rdfs:label>Rating</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Recommended -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Recommended">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing if the author recommends the flight</rdfs:comment>
+        <rdfs:label>Recommended</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Review -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Review">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#written_by"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Class representing a flight review</rdfs:comment>
+        <rdfs:label>Review</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the ID of the review</rdfs:comment>
+        <rdfs:label>Review_ID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Review_body -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_body">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the body of the review</rdfs:comment>
+        <rdfs:label>Review_body</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Review_title -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_title">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the title of the review</rdfs:comment>
+        <rdfs:label>Review_title</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Airline"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_comfort -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_comfort">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+        <rdfs:comment>Class representing the rating of seat comfort</rdfs:comment>
+        <rdfs:label>Seat_comfort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_type -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_type">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the seat type</rdfs:comment>
+        <rdfs:label>Seat_type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Solo_leisure -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Solo_leisure">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Type_of_traveler"/>
+        <rdfs:comment>Class representing type of traveler of solo leisure</rdfs:comment>
+        <rdfs:label>Solo_leisure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Type_of_traveler -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Type_of_traveler">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing the type of traveler</rdfs:comment>
+        <rdfs:label>Type_of_traveler</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Value_for_money -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Value_for_money">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+        <rdfs:comment>Class representing the rating of value for money</rdfs:comment>
+        <rdfs:label>Value_for_money</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Verified -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Verified">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdfs:comment>Class representing if the review has been verified or not</rdfs:comment>
+        <rdfs:label>Verified</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Wifi_and_connectivity -->
+
+    <owl:Class rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Wifi_and_connectivity">
+        <rdfs:subClassOf rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+        <rdfs:comment>Class representing the rating of wifi and connectivity</rdfs:comment>
+        <rdfs:label>Wifi_and_connectivity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Albert -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Albert">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Alf -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Alf">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Arnau -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Arnau">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#John -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#John">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Pablo -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Pablo">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#01 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#01">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID"/>
+        <Ontologia_de_satisfacció_de_vols:belongs_to rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways"/>
+        <Ontologia_de_satisfacció_de_vols:has_ID rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#01"/>
+        <Ontologia_de_satisfacció_de_vols:written_by rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Albert"/>
+        <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</Ontologia_de_satisfacció_de_vols:hasRating>
+        <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isRecommended>
+        <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isVerified>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#02 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#02">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID"/>
+        <Ontologia_de_satisfacció_de_vols:belongs_to rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways"/>
+        <Ontologia_de_satisfacció_de_vols:has_ID rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#02"/>
+        <Ontologia_de_satisfacció_de_vols:written_by rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Alf"/>
+        <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</Ontologia_de_satisfacció_de_vols:hasRating>
+        <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isRecommended>
+        <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isVerified>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#03 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#03">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID"/>
+        <Ontologia_de_satisfacció_de_vols:belongs_to rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways"/>
+        <Ontologia_de_satisfacció_de_vols:has_ID rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#03"/>
+        <Ontologia_de_satisfacció_de_vols:written_by rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Arnau"/>
+        <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</Ontologia_de_satisfacció_de_vols:hasRating>
+        <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isRecommended>
+        <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isVerified>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#04 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#04">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID"/>
+        <Ontologia_de_satisfacció_de_vols:belongs_to rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair"/>
+        <Ontologia_de_satisfacció_de_vols:has_ID rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#04"/>
+        <Ontologia_de_satisfacció_de_vols:written_by rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#John"/>
+        <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</Ontologia_de_satisfacció_de_vols:hasRating>
+        <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Ontologia_de_satisfacció_de_vols:isRecommended>
+        <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Ontologia_de_satisfacció_de_vols:isVerified>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:Ontologia_de_satisfacció_de_vols#05 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#05">
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+        <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID"/>
+        <Ontologia_de_satisfacció_de_vols:belongs_to rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair"/>
+        <Ontologia_de_satisfacció_de_vols:has_ID rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#05"/>
+        <Ontologia_de_satisfacció_de_vols:written_by rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Pablo"/>
+        <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</Ontologia_de_satisfacció_de_vols:hasRating>
+        <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Ontologia_de_satisfacció_de_vols:isRecommended>
+        <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Ontologia_de_satisfacció_de_vols:isVerified>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways">
+        <rdfs:comment>Class representing the company Qatar_airways</rdfs:comment>
+        <rdfs:label>Qatar_airways</rdfs:label>
+        <rdfs:sameAs>http://dbpedia.org/resource/Qatar_Airways</rdfs:sameAs>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair">
+        <rdfs:comment>Class representing the company Ryanair</rdfs:comment>
+        <rdfs:label>Ryanair</rdfs:label>
+        <rdfs:sameAs>http://dbpedia.org/resource/Ryanair</rdfs:sameAs>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Date_flown"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Date_published"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Destination"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Origin"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Rating"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Recommended"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_body"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Review_title"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_type"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Type_of_traveler"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Verified"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Business"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Couple_leisure"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Family_leisure"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Solo_leisure"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Business_class"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Economy_class"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#First_class"/>
+            <rdf:Description rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Premium_economy"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/rating">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#hasRating"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/rating"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/rating"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#isRecommended"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#hasRating"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/rating"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/rating"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#isRecommended"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#isRecommended"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#isVerified"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/r"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
