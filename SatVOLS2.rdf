@@ -111,19 +111,7 @@
     <owl:DatatypeProperty rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#hasRating">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Review"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
-                    </rdf:Description>
-                    <rdf:Description>
-                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">max_rating</xsd:maxInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>data to indicate what rating the review has</rdfs:comment>
         <rdfs:label>hasRating</rdfs:label>
     </owl:DatatypeProperty>
@@ -611,6 +599,8 @@
 
     <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Albert">
         <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+        <rdfs:comment>Instance representing author Albert</rdfs:comment>
+        <rdfs:label>Albert</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -619,6 +609,8 @@
 
     <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Alf">
         <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+        <rdfs:comment>Instance representing author Alf</rdfs:comment>
+        <rdfs:label>Alf</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -627,6 +619,8 @@
 
     <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Arnau">
         <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+        <rdfs:comment>Instance representing author Arnau</rdfs:comment>
+        <rdfs:label>Arnau</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -635,6 +629,8 @@
 
     <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#John">
         <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+        <rdfs:comment>Instance representing author John</rdfs:comment>
+        <rdfs:label>John</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -643,6 +639,8 @@
 
     <owl:NamedIndividual rdf:about="urn:absolute:Ontologia_de_satisfacció_de_vols#Pablo">
         <rdf:type rdf:resource="urn:absolute:Ontologia_de_satisfacció_de_vols#Author"/>
+        <rdfs:comment>Instance representing author Pablo</rdfs:comment>
+        <rdfs:label>Pablo</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -674,6 +672,8 @@
         <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</Ontologia_de_satisfacció_de_vols:hasRating>
         <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isRecommended>
         <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isVerified>
+        <rdfs:comment>Instance representing review 1</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">02</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -689,6 +689,8 @@
         <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</Ontologia_de_satisfacció_de_vols:hasRating>
         <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isRecommended>
         <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isVerified>
+        <rdfs:comment>Instance representing review 2</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">02</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -704,6 +706,8 @@
         <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</Ontologia_de_satisfacció_de_vols:hasRating>
         <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isRecommended>
         <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Ontologia_de_satisfacció_de_vols:isVerified>
+        <rdfs:comment>Instance representing review 3</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">03</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -719,6 +723,8 @@
         <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</Ontologia_de_satisfacció_de_vols:hasRating>
         <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Ontologia_de_satisfacció_de_vols:isRecommended>
         <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Ontologia_de_satisfacció_de_vols:isVerified>
+        <rdfs:comment>Instance representing review 4</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">04</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -734,6 +740,8 @@
         <Ontologia_de_satisfacció_de_vols:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</Ontologia_de_satisfacció_de_vols:hasRating>
         <Ontologia_de_satisfacció_de_vols:isRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Ontologia_de_satisfacció_de_vols:isRecommended>
         <Ontologia_de_satisfacció_de_vols:isVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Ontologia_de_satisfacció_de_vols:isVerified>
+        <rdfs:comment>Instance representing review 5</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">05</rdfs:label>
     </owl:NamedIndividual>
     
 
