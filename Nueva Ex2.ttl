@@ -1,0 +1,678 @@
+@prefix : <http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix vols: <file:/C:/Users/alber/Documents/Protege/vols> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix Ontologia_de_satisfacció_de_vols: <urn:absolute:Ontologia_de_satisfacció_de_vols#> .
+@base <http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/> .
+
+<urn:absolute:Ontologia_de_satisfacció_de_vols> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#belongs_to
+Ontologia_de_satisfacció_de_vols:belongs_to rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdf:type owl:AsymmetricProperty ;
+                                            rdfs:domain Ontologia_de_satisfacció_de_vols:Aircraft ;
+                                            rdfs:range Ontologia_de_satisfacció_de_vols:Airline ;
+                                            rdfs:comment "Property that indicates what company owns the aircraft" ;
+                                            rdfs:label "belongs_to" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#has_ID
+Ontologia_de_satisfacció_de_vols:has_ID rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                        rdf:type owl:FunctionalProperty ,
+                                                 owl:SymmetricProperty ;
+                                        rdfs:domain Ontologia_de_satisfacció_de_vols:Review ;
+                                        rdfs:range Ontologia_de_satisfacció_de_vols:Review_ID ;
+                                        rdfs:comment "Property to indicate what ID has the review" ;
+                                        rdfs:label "has_id" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#written_by
+Ontologia_de_satisfacció_de_vols:written_by rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdf:type owl:FunctionalProperty ,
+                                                     owl:AsymmetricProperty ;
+                                            rdfs:domain Ontologia_de_satisfacció_de_vols:Review ;
+                                            rdfs:range Ontologia_de_satisfacció_de_vols:Author_name ;
+                                            rdfs:comment "Property to indicate who has written the review" ;
+                                            rdfs:label "written_by" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain Ontologia_de_satisfacció_de_vols:Review .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#hasRating
+Ontologia_de_satisfacció_de_vols:hasRating rdf:type owl:DatatypeProperty ;
+                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                           rdfs:domain Ontologia_de_satisfacció_de_vols:Review ;
+                                           rdfs:range xsd:integer ;
+                                           rdfs:comment "data to indicate what rating the review has" ;
+                                           rdfs:label "hasRating" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#isRecommended
+Ontologia_de_satisfacció_de_vols:isRecommended rdf:type owl:DatatypeProperty ;
+                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                               rdfs:domain Ontologia_de_satisfacció_de_vols:Review ;
+                                               rdfs:range xsd:boolean ;
+                                               rdfs:comment "data to indicate if the review is recommended" ;
+                                               rdfs:label "isRecommended" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#isVerified
+Ontologia_de_satisfacció_de_vols:isVerified rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                            rdfs:domain Ontologia_de_satisfacció_de_vols:Review ;
+                                            rdfs:range xsd:boolean ;
+                                            rdfs:comment "data to indicate if the review is verified" ;
+                                            rdfs:label "isVerified" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Aircraft
+Ontologia_de_satisfacció_de_vols:Aircraft rdf:type owl:Class ;
+                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                            owl:onProperty Ontologia_de_satisfacció_de_vols:belongs_to ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass Ontologia_de_satisfacció_de_vols:Airline
+                                                          ] ;
+                                          rdfs:comment "Class representing the Aircraft for which the review is done" ;
+                                          rdfs:label "Aircraft" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Airline
+Ontologia_de_satisfacció_de_vols:Airline rdf:type owl:Class ;
+                                         rdfs:comment "Class representing the owner of the aicraft" ;
+                                         rdfs:label "Airline" ;
+                                         rdfs:sameAs "https://dbpedia.org/ontology/Airline" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Author
+Ontologia_de_satisfacció_de_vols:Author rdf:type owl:Class ;
+                                        rdfs:comment "Class representing the author of the review" ;
+                                        rdfs:label "Author" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Author_name
+Ontologia_de_satisfacció_de_vols:Author_name rdf:type owl:Class ;
+                                             rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Author ;
+                                             rdfs:comment "Class representing the name of the author" ;
+                                             rdfs:label "Author_name" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Business
+Ontologia_de_satisfacció_de_vols:Business rdf:type owl:Class ;
+                                          rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Type_of_traveler ;
+                                          rdfs:comment "Class representing type of traveler of business" ;
+                                          rdfs:label "Business" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Business_class
+Ontologia_de_satisfacció_de_vols:Business_class rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Seat_type ;
+                                                rdfs:comment "Class representing seat type of business class" ;
+                                                rdfs:label "Business_class" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Cabin_staff_service
+Ontologia_de_satisfacció_de_vols:Cabin_staff_service rdf:type owl:Class ;
+                                                     rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Rating ;
+                                                     rdfs:comment "Class representing the rating of cabin staff service" ;
+                                                     rdfs:label "Cabin_staff_service" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Couple_leisure
+Ontologia_de_satisfacció_de_vols:Couple_leisure rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Type_of_traveler ;
+                                                rdfs:comment "Class representing type of traveler of couple leisure" ;
+                                                rdfs:label "Couple_leisure" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Date_flown
+Ontologia_de_satisfacció_de_vols:Date_flown rdf:type owl:Class ;
+                                            rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Flight ;
+                                            rdfs:comment "Class representing the date flight took place" ;
+                                            rdfs:label "Date_flown" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Date_published
+Ontologia_de_satisfacció_de_vols:Date_published rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                                rdfs:comment "Class representing the date the author published the review" ;
+                                                rdfs:label "Date_published" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Destination
+Ontologia_de_satisfacció_de_vols:Destination rdf:type owl:Class ;
+                                             rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Flight ;
+                                             rdfs:comment "Class representing the destination of the flight" ;
+                                             rdfs:label "Destination" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Economy_class
+Ontologia_de_satisfacció_de_vols:Economy_class rdf:type owl:Class ;
+                                               rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Seat_type ;
+                                               rdfs:comment "Class representing seat type of economy class" ;
+                                               rdfs:label "Economy_class" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Family_leisure
+Ontologia_de_satisfacció_de_vols:Family_leisure rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Type_of_traveler ;
+                                                rdfs:comment "Class representing type of traveler of family leisure" ;
+                                                rdfs:label "Family_leisure" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#First_class
+Ontologia_de_satisfacció_de_vols:First_class rdf:type owl:Class ;
+                                             rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Seat_type ;
+                                             rdfs:comment "Class representing seat type of first class" ;
+                                             rdfs:label "First_class" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Flight
+Ontologia_de_satisfacció_de_vols:Flight rdf:type owl:Class .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Food_and_beverages
+Ontologia_de_satisfacció_de_vols:Food_and_beverages rdf:type owl:Class ;
+                                                    rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Rating ;
+                                                    rdfs:comment "Class representing the rating of food and beverages" ;
+                                                    rdfs:label "Food_and_beverages" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Ground_service
+Ontologia_de_satisfacció_de_vols:Ground_service rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Rating ;
+                                                rdfs:comment "Class representing the rating of ground service" ;
+                                                rdfs:label "Ground_service" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Inflight_entertainment
+Ontologia_de_satisfacció_de_vols:Inflight_entertainment rdf:type owl:Class ;
+                                                        rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Rating ;
+                                                        rdfs:comment "Class representing the rating of inflight entertainment" ;
+                                                        rdfs:label "Inflight_entertainment" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating
+Ontologia_de_satisfacció_de_vols:Max_rating rdf:type owl:Class ;
+                                            rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                            rdfs:comment "Class representing the max rating" ;
+                                            rdfs:label "Max_rating" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_css
+Ontologia_de_satisfacció_de_vols:Max_rating_css rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Cabin_staff_service ;
+                                                rdfs:comment "Class representing the max rating of cabin staff service" ;
+                                                rdfs:label "Max_rating_css" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_fab
+Ontologia_de_satisfacció_de_vols:Max_rating_fab rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Food_and_beverages ;
+                                                rdfs:comment "Class representing the max rating of food and beverages" ;
+                                                rdfs:label "Max_rating_fab" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_gs
+Ontologia_de_satisfacció_de_vols:Max_rating_gs rdf:type owl:Class ;
+                                               rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Ground_service ;
+                                               rdfs:comment "Class representing the max rating of ground service" ;
+                                               rdfs:label "Max_rating_gs" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_ie
+Ontologia_de_satisfacció_de_vols:Max_rating_ie rdf:type owl:Class ;
+                                               rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Inflight_entertainment ;
+                                               rdfs:comment "Class representing the max rating of inflight entertainment" ;
+                                               rdfs:label "Max_rating_ie" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_sc
+Ontologia_de_satisfacció_de_vols:Max_rating_sc rdf:type owl:Class ;
+                                               rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Seat_comfort ;
+                                               rdfs:comment "Class representing the max rating of seat comfort" ;
+                                               rdfs:label "Max_rating_sc" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_vfm
+Ontologia_de_satisfacció_de_vols:Max_rating_vfm rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Value_for_money ;
+                                                rdfs:comment "Class representing the max rating of value for money" ;
+                                                rdfs:label "Max_rating_vfm" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Max_rating_wac
+Ontologia_de_satisfacció_de_vols:Max_rating_wac rdf:type owl:Class ;
+                                                rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Wifi_and_connectivity ;
+                                                rdfs:comment "Class representing the max rating of wifi and connectivity" ;
+                                                rdfs:label "Max_rating_wac" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Origin
+Ontologia_de_satisfacció_de_vols:Origin rdf:type owl:Class ;
+                                        rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Flight ;
+                                        rdfs:comment "Class representing the origin of the flight" ;
+                                        rdfs:label "Origin" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Passenger_country
+Ontologia_de_satisfacció_de_vols:Passenger_country rdf:type owl:Class ;
+                                                   rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Author ;
+                                                   rdfs:comment "Class representing the country of the Author" ;
+                                                   rdfs:label "Passenger_country" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Premium_economy
+Ontologia_de_satisfacció_de_vols:Premium_economy rdf:type owl:Class ;
+                                                 rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Seat_type ;
+                                                 rdfs:comment "Class representing seat type of premium economy" ;
+                                                 rdfs:label "Premium_economy" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways
+Ontologia_de_satisfacció_de_vols:Qatar_airways rdf:type owl:Class ;
+                                               rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Airline ;
+                                               owl:disjointWith Ontologia_de_satisfacció_de_vols:Ryanair .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Rating
+Ontologia_de_satisfacció_de_vols:Rating rdf:type owl:Class ;
+                                        rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                        rdfs:comment "Class representing the rating of the review" ;
+                                        rdfs:label "Rating" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Recommended
+Ontologia_de_satisfacció_de_vols:Recommended rdf:type owl:Class ;
+                                             rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                             rdfs:comment "Class representing if the author recommends the flight" ;
+                                             rdfs:label "Recommended" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Review
+Ontologia_de_satisfacció_de_vols:Review rdf:type owl:Class ;
+                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                          owl:onProperty Ontologia_de_satisfacció_de_vols:written_by ;
+                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass Ontologia_de_satisfacció_de_vols:Author
+                                                        ] ;
+                                        rdfs:comment "Class representing a flight review" ;
+                                        rdfs:label "Review" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Review_ID
+Ontologia_de_satisfacció_de_vols:Review_ID rdf:type owl:Class ;
+                                           rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                           rdfs:comment "Class representing the ID of the review" ;
+                                           rdfs:label "Review_ID" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Review_body
+Ontologia_de_satisfacció_de_vols:Review_body rdf:type owl:Class ;
+                                             rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                             rdfs:comment "Class representing the body of the review" ;
+                                             rdfs:label "Review_body" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Review_title
+Ontologia_de_satisfacció_de_vols:Review_title rdf:type owl:Class ;
+                                              rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                              rdfs:comment "Class representing the title of the review" ;
+                                              rdfs:label "Review_title" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair
+Ontologia_de_satisfacció_de_vols:Ryanair rdf:type owl:Class ;
+                                         rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Airline .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_comfort
+Ontologia_de_satisfacció_de_vols:Seat_comfort rdf:type owl:Class ;
+                                              rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Rating ;
+                                              rdfs:comment "Class representing the rating of seat comfort" ;
+                                              rdfs:label "Seat_comfort" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Seat_type
+Ontologia_de_satisfacció_de_vols:Seat_type rdf:type owl:Class ;
+                                           rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Flight ;
+                                           rdfs:comment "Class representing the seat type" ;
+                                           rdfs:label "Seat_type" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Solo_leisure
+Ontologia_de_satisfacció_de_vols:Solo_leisure rdf:type owl:Class ;
+                                              rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Type_of_traveler ;
+                                              rdfs:comment "Class representing type of traveler of solo leisure" ;
+                                              rdfs:label "Solo_leisure" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Type_of_traveler
+Ontologia_de_satisfacció_de_vols:Type_of_traveler rdf:type owl:Class ;
+                                                  rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                                  rdfs:comment "Class representing the type of traveler" ;
+                                                  rdfs:label "Type_of_traveler" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Value_for_money
+Ontologia_de_satisfacció_de_vols:Value_for_money rdf:type owl:Class ;
+                                                 rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Rating ;
+                                                 rdfs:comment "Class representing the rating of value for money" ;
+                                                 rdfs:label "Value_for_money" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Verified
+Ontologia_de_satisfacció_de_vols:Verified rdf:type owl:Class ;
+                                          rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Review ;
+                                          rdfs:comment "Class representing if the review has been verified or not" ;
+                                          rdfs:label "Verified" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Wifi_and_connectivity
+Ontologia_de_satisfacció_de_vols:Wifi_and_connectivity rdf:type owl:Class ;
+                                                       rdfs:subClassOf Ontologia_de_satisfacció_de_vols:Rating ;
+                                                       rdfs:comment "Class representing the rating of wifi and connectivity" ;
+                                                       rdfs:label "Wifi_and_connectivity" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Albert
+Ontologia_de_satisfacció_de_vols:Albert rdf:type owl:NamedIndividual ,
+                                                 Ontologia_de_satisfacció_de_vols:Author ;
+                                        rdfs:comment "Instance representing author Albert" ;
+                                        rdfs:label "Albert" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Alf
+Ontologia_de_satisfacció_de_vols:Alf rdf:type owl:NamedIndividual ,
+                                              Ontologia_de_satisfacció_de_vols:Author ;
+                                     rdfs:comment "Instance representing author Alf" ;
+                                     rdfs:label "Alf" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Arnau
+Ontologia_de_satisfacció_de_vols:Arnau rdf:type owl:NamedIndividual ,
+                                                Ontologia_de_satisfacció_de_vols:Author ;
+                                       rdfs:comment "Instance representing author Arnau" ;
+                                       rdfs:label "Arnau" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#John
+Ontologia_de_satisfacció_de_vols:John rdf:type owl:NamedIndividual ,
+                                               Ontologia_de_satisfacció_de_vols:Author ;
+                                      rdfs:comment "Instance representing author John" ;
+                                      rdfs:label "John" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Pablo
+Ontologia_de_satisfacció_de_vols:Pablo rdf:type owl:NamedIndividual ,
+                                                Ontologia_de_satisfacció_de_vols:Author ;
+                                       rdfs:comment "Instance representing author Pablo" ;
+                                       rdfs:label "Pablo" .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Qatar_airways
+Ontologia_de_satisfacció_de_vols:Qatar_airways rdf:type owl:NamedIndividual ,
+                                                        Ontologia_de_satisfacció_de_vols:Qatar_airways .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#Ryanair
+Ontologia_de_satisfacció_de_vols:Ryanair rdf:type owl:NamedIndividual ,
+                                                  Ontologia_de_satisfacció_de_vols:Ryanair .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#01
+<urn:absolute:Ontologia_de_satisfacció_de_vols#01> rdf:type owl:NamedIndividual ,
+                                                            Ontologia_de_satisfacció_de_vols:Review ,
+                                                            Ontologia_de_satisfacció_de_vols:Review_ID ;
+                                                   Ontologia_de_satisfacció_de_vols:has_ID <urn:absolute:Ontologia_de_satisfacció_de_vols#01> ;
+                                                   Ontologia_de_satisfacció_de_vols:written_by Ontologia_de_satisfacció_de_vols:Albert ;
+                                                   Ontologia_de_satisfacció_de_vols:hasRating 8 ;
+                                                   Ontologia_de_satisfacció_de_vols:isRecommended "true"^^xsd:boolean ;
+                                                   Ontologia_de_satisfacció_de_vols:isVerified "true"^^xsd:boolean ;
+                                                   rdfs:comment "Instance representing review 1" ;
+                                                   rdfs:label 02 .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#02
+<urn:absolute:Ontologia_de_satisfacció_de_vols#02> rdf:type owl:NamedIndividual ,
+                                                            Ontologia_de_satisfacció_de_vols:Review ,
+                                                            Ontologia_de_satisfacció_de_vols:Review_ID ;
+                                                   Ontologia_de_satisfacció_de_vols:has_ID <urn:absolute:Ontologia_de_satisfacció_de_vols#02> ;
+                                                   Ontologia_de_satisfacció_de_vols:written_by Ontologia_de_satisfacció_de_vols:Alf ;
+                                                   Ontologia_de_satisfacció_de_vols:hasRating 6 ;
+                                                   Ontologia_de_satisfacció_de_vols:isRecommended "true"^^xsd:boolean ;
+                                                   Ontologia_de_satisfacció_de_vols:isVerified "true"^^xsd:boolean ;
+                                                   rdfs:comment "Instance representing review 2" ;
+                                                   rdfs:label 01 .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#03
+<urn:absolute:Ontologia_de_satisfacció_de_vols#03> rdf:type owl:NamedIndividual ,
+                                                            Ontologia_de_satisfacció_de_vols:Review ,
+                                                            Ontologia_de_satisfacció_de_vols:Review_ID ;
+                                                   Ontologia_de_satisfacció_de_vols:has_ID <urn:absolute:Ontologia_de_satisfacció_de_vols#03> ;
+                                                   Ontologia_de_satisfacció_de_vols:written_by Ontologia_de_satisfacció_de_vols:Arnau ;
+                                                   Ontologia_de_satisfacció_de_vols:hasRating 8 ;
+                                                   Ontologia_de_satisfacció_de_vols:isRecommended "true"^^xsd:boolean ;
+                                                   Ontologia_de_satisfacció_de_vols:isVerified "true"^^xsd:boolean ;
+                                                   rdfs:comment "Instance representing review 3" ;
+                                                   rdfs:label 03 .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#04
+<urn:absolute:Ontologia_de_satisfacció_de_vols#04> rdf:type owl:NamedIndividual ,
+                                                            Ontologia_de_satisfacció_de_vols:Review ,
+                                                            Ontologia_de_satisfacció_de_vols:Review_ID ;
+                                                   Ontologia_de_satisfacció_de_vols:has_ID <urn:absolute:Ontologia_de_satisfacció_de_vols#04> ;
+                                                   Ontologia_de_satisfacció_de_vols:written_by Ontologia_de_satisfacció_de_vols:John ;
+                                                   Ontologia_de_satisfacció_de_vols:hasRating 2 ;
+                                                   Ontologia_de_satisfacció_de_vols:isRecommended "false"^^xsd:boolean ;
+                                                   Ontologia_de_satisfacció_de_vols:isVerified "false"^^xsd:boolean ;
+                                                   rdfs:comment "Instance representing review 4" ;
+                                                   rdfs:label 04 .
+
+
+###  urn:absolute:Ontologia_de_satisfacció_de_vols#05
+<urn:absolute:Ontologia_de_satisfacció_de_vols#05> rdf:type owl:NamedIndividual ,
+                                                            Ontologia_de_satisfacció_de_vols:Review ,
+                                                            Ontologia_de_satisfacció_de_vols:Review_ID ;
+                                                   Ontologia_de_satisfacció_de_vols:has_ID <urn:absolute:Ontologia_de_satisfacció_de_vols#05> ;
+                                                   Ontologia_de_satisfacció_de_vols:written_by Ontologia_de_satisfacció_de_vols:Pablo ;
+                                                   Ontologia_de_satisfacció_de_vols:hasRating 8 ;
+                                                   Ontologia_de_satisfacció_de_vols:isRecommended "false"^^xsd:boolean ;
+                                                   Ontologia_de_satisfacció_de_vols:isVerified "false"^^xsd:boolean ;
+                                                   rdfs:comment "Instance representing review 5" ;
+                                                   rdfs:label 05 .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+Ontologia_de_satisfacció_de_vols:Qatar_airways rdfs:comment "Class representing the company Qatar_airways" ;
+                                               rdfs:label "Qatar_airways" ;
+                                               rdfs:sameAs "http://dbpedia.org/resource/Qatar_Airways" .
+
+
+Ontologia_de_satisfacció_de_vols:Ryanair rdfs:comment "Class representing the company Ryanair" ;
+                                         rdfs:label "Ryanair" ;
+                                         rdfs:sameAs "http://dbpedia.org/resource/Ryanair" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Ontologia_de_satisfacció_de_vols:Business
+                Ontologia_de_satisfacció_de_vols:Couple_leisure
+                Ontologia_de_satisfacció_de_vols:Family_leisure
+                Ontologia_de_satisfacció_de_vols:Solo_leisure
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Ontologia_de_satisfacció_de_vols:Business_class
+                Ontologia_de_satisfacció_de_vols:Economy_class
+                Ontologia_de_satisfacció_de_vols:First_class
+                Ontologia_de_satisfacció_de_vols:Premium_economy
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:r rdf:type swrl:Variable .
+
+:rating rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S1" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate Ontologia_de_satisfacció_de_vols:Review ;
+                           swrl:argument1 :r
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate Ontologia_de_satisfacció_de_vols:hasRating ;
+                                      swrl:argument1 :r ;
+                                      swrl:argument2 :rating
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                 swrl:builtin swrlb:greaterThan ;
+                                                 swrl:arguments [ rdf:type rdf:List ;
+                                                                  rdf:first :rating ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first 8 ;
+                                                                             rdf:rest rdf:nil
+                                                                           ]
+                                                                ]
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                           swrl:propertyPredicate Ontologia_de_satisfacció_de_vols:isRecommended ;
+                           swrl:argument1 :r ;
+                           swrl:argument2 "true"^^xsd:boolean
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S2" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate Ontologia_de_satisfacció_de_vols:Review ;
+                           swrl:argument1 :r
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate Ontologia_de_satisfacció_de_vols:hasRating ;
+                                      swrl:argument1 :r ;
+                                      swrl:argument2 :rating
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                 swrl:builtin swrlb:lessThan ;
+                                                 swrl:arguments [ rdf:type rdf:List ;
+                                                                  rdf:first :rating ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first 5 ;
+                                                                             rdf:rest rdf:nil
+                                                                           ]
+                                                                ]
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                           swrl:propertyPredicate Ontologia_de_satisfacció_de_vols:isRecommended ;
+                           swrl:argument1 :r ;
+                           swrl:argument2 "false"^^xsd:boolean
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S3" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate Ontologia_de_satisfacció_de_vols:Review ;
+                           swrl:argument1 :r
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate Ontologia_de_satisfacció_de_vols:isRecommended ;
+                                      swrl:argument1 :r ;
+                                      swrl:argument2 "true"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                           swrl:propertyPredicate Ontologia_de_satisfacció_de_vols:isVerified ;
+                           swrl:argument1 :r ;
+                           swrl:argument2 "true"^^xsd:boolean
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
