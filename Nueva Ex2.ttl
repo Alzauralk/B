@@ -209,7 +209,9 @@ Ontologia_de_satisfacció_de_vols:First_class rdf:type owl:Class ;
 
 
 ###  urn:absolute:Ontologia_de_satisfacció_de_vols#Flight
-Ontologia_de_satisfacció_de_vols:Flight rdf:type owl:Class .
+Ontologia_de_satisfacció_de_vols:Flight rdf:type owl:Class ;
+                                        rdfs:comment "Class representing a Flight" ;
+                                        rdfs:label "Flight" .
 
 
 ###  urn:absolute:Ontologia_de_satisfacció_de_vols#Food_and_beverages
