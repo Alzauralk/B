@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/> .
+@prefix : <http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/VERSION2> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -10,7 +10,6 @@
 @prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
 @prefix Ontologia_de_satisfacció_de_vols: <urn:absolute:Ontologia_de_satisfacció_de_vols#> .
 @base <http://www.semanticweb.org/alber/ontologies/2024/3/untitled-ontology-4/> .
-:Ontologia_de_satisfacció_de_vols owl:versionInfo "1" .
 
 
 <urn:absolute:Ontologia_de_satisfacció_de_vols> rdf:type owl:Ontology .
